@@ -8,6 +8,8 @@ class App {
 
   #bridgeAnswer;
 
+  #bridge;
+
   play() {
     OutputView.printStart();
     this.progressApp(this.#appStatus);
@@ -15,7 +17,10 @@ class App {
 
   progressApp(appStatus) {
     if (appStatus === 1) return this.progressBridgeMake();
-    if (appStatus === 2) return BridgeMaker.makeBridge(this.#bridgeAnswer);
+    if (appStatus === 2) {
+      this.#bridge = BridgeMaker.makeBridge(this.#bridgeAnswer);
+      console.log(this.#bridge);
+    }
   }
 
   progressBridgeMake() {

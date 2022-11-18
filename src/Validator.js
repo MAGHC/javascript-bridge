@@ -59,4 +59,4 @@ module.exports = Validator;
 //   ),
 // );
 
-console.log(Validator.checkSpace('1 2'));
+// console.log(Validator.checkSpace('1 2'));
