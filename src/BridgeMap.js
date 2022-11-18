@@ -1,13 +1,13 @@
 const MapMaker = require('./MapMaker');
 
-const mock = { CORRECT: '| O', INCORRECT: '| X', EMPTY: '| ' };
+const mock = { CORRECT: '| O', INCORRECT: '| X', EMPTY: '|   ' };
 
 class BridgeMap {
   #isFirst = true;
 
-  #FIRST_MAP_SOURCE = { CORRECT: 'O', INCORRECT: 'X', EMPTY: ' ' };
+  #FIRST_MAP_SOURCE = { CORRECT: ' O ', INCORRECT: ' X ', EMPTY: '   ' };
 
-  #MAP_SOURCE = { CORRECT: '|O', INCORRECT: '|X', EMPTY: '| ' };
+  #MAP_SOURCE = { CORRECT: '| O ', INCORRECT: '| X ', EMPTY: '|   ' };
 
   #bridgeMap = MapMaker.makeMap();
 
@@ -87,7 +87,7 @@ const [up, down] = mcok2;
 // console.log(app.confirmisFirst());
 app.handleMap(true, 'D');
 console.log(app.cofirm(), '하나추가');
-app.handleMap(true, 'D');
+app.handleMap(false, 'U');
 console.log(app.cofirm(), '최종');
 console.log();
 
