@@ -9,9 +9,20 @@ class BridgeMap {
 
   #bridgeMap;
 
+  handleMap(boolean, input, beforeMap) {
+    if (this.#isFirst) this.#bridgeMap = this.addFirstMap(boolean, input, beforeMap);
+    if (!this.#isFirst) this.#bridgeMap = this.addMap(boolean, input, beforeMap);
+  }
+
   addFirstMap(boolean, input, beforeMap = MapMaker.makeMap()) {
+    this.#isFirst = false;
     if (boolean) return this.addCorrect(input, beforeMap, this.#FIRST_MAP_SOURCE);
     if (!boolean) return this.addIncorrect(input, beforeMap, this.#FIRST_MAP_SOURCE);
+  }
+
+  addMap(boolean, input, beforeMap) {
+    if (boolean) return this.addCorrect(input, beforeMap, this.#MAP_SOURCE);
+    if (!boolean) return this.addIncorrect(input, beforeMap, this.#MAP_SOURCE);
   }
 
   addCorrect(input, beforeMap = [[], []], mapSource = this.#FIRST_MAP_SOURCE) {
